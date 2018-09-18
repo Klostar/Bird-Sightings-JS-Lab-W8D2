@@ -6,8 +6,10 @@ const SightingsGridView = function (container) {
 };
 
 SightingsGridView.prototype.bindEvents = function () {
+
   PubSub.subscribe('Sightings:data-loaded', (evt) => {
     this.render(evt.detail);
+    console.log(evt);
   });
 };
 
