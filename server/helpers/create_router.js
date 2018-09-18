@@ -20,7 +20,7 @@ const createRouter = function (collection) {
   router.get('/:id', (req, res) => {
     const id = req.params.id;
     collection
-      .find({ _id: ObjectID(id) })
+      .findOne({ _id: ObjectID(id) })
       .toArray()
       .then((docs) => res.json(docs))
       .catch((err) => {
